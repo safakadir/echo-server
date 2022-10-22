@@ -31,6 +31,9 @@ app.post('/post', (req, res) => {
 app.put('/put', (req, res) => {
     res.json(provideResponse(req));
 });
+app.patch('/patch', (req, res) => {
+    res.json(provideResponse(req));
+});
 app.delete('/delete', (req, res) => {
     res.json(provideResponse(req));
 });
