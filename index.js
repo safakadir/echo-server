@@ -18,24 +18,20 @@ const provideResponse = (req) => {
     }
 }
 
+const reqHandler = (req, res) => {
+    const responseBody = provideResponse(req);
+    console.log(`\nNew Request: ${new Date()}\n${JSON.stringify(responseBody, null, 3)}`);
+    res.json(responseBody);
+};
+
 app.get('/', (req, res) => {
     res.send("Hello from the echo server!");
 })
 
-app.get('/get', (req, res) => {
-    res.json(provideResponse(req));
-});
-app.post('/post', (req, res) => {
-    res.json(provideResponse(req));
-});
-app.put('/put', (req, res) => {
-    res.json(provideResponse(req));
-});
-app.patch('/patch', (req, res) => {
-    res.json(provideResponse(req));
-});
-app.delete('/delete', (req, res) => {
-    res.json(provideResponse(req));
-});
+app.get('/get', reqHandler);
+app.post('/post', reqHandler);
+app.put('/put', reqHandler);
+app.patch('/patch', reqHandler);
+app.delete('/delete', reqHandler);
 
 app.listen(port, () => console.log(`Echo server listening on port ${port}!`));
