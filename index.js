@@ -25,13 +25,13 @@ app.get('/', (req, res) => {
 app.get('/get', (req, res) => {
     res.json(provideResponse(req));
 });
-app.post('/get', (req, res) => {
+app.post('/post', (req, res) => {
     res.json(provideResponse(req));
 });
-app.put('/get', (req, res) => {
+app.put('/put', (req, res) => {
     res.json(provideResponse(req));
 });
-app.delete('/get', (req, res) => {
+app.delete('/delete', (req, res) => {
     res.json(provideResponse(req));
 });
 
